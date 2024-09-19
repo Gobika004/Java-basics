@@ -1,0 +1,27 @@
+import java.util.*;
+public class As
+{
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int a = sc.nextInt();
+int b = sc.nextInt();
+int n = sc.nextInt();
+int[] arr = new int[n];
+for(int i=0;i<n;i++){
+   arr[i] = sc.nextInt();
+}
+
+        subarray(arr,a,b);
+        System.out.print(Arrays.toString(arr));
+}
+public static void subarray(int[] arr,int a,int b){
+   int start = Math.min(a,b);
+   int end = Math.max(a,b);
+   
+   int[] array = Arrays.copyOfRange(arr,start,end+1);
+   
+   Arrays.sort(array);
+   System.arraycopy(array,0,arr, start,array.length);
+
+}
+}
