@@ -1,0 +1,34 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		   int n=sc.nextInt();
+		   int[] arr=new int[n];
+		   int x=sc.nextInt();
+		   int y=sc.nextInt();
+		   int high=Math.max(x,y);
+		   int low=Math.min(x,y);
+		   for(int i=0;i<n;i++)
+		   arr[i]=sc.nextInt();
+		   List<Integer> list = new ArrayList<>();
+           for (int value : arr) {
+             if (value >= low && value <= high) {
+             list.add(value);
+            }
+           }
+        Integer[] sortedArray = list.toArray(new Integer[0]);
+        Arrays.sort(sortedArray);
+        int sortedIndex = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= low && arr[i] <= high) {
+                arr[i] = sortedArray[sortedIndex++];
+            }
+        }
+        for (int a : arr) {
+            System.out.print(a + " ");
+        }
+}
+}
+        
